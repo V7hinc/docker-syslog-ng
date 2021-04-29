@@ -2,7 +2,7 @@ FROM alpine:3.13
 
 ENV SYSLOG_VERSION=3.31.2
 # syslog-ng源码包下载链接
-ENV DOWNLOAD_URL="https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${SYSLOG_VERSION}/syslog-ng-${SYSLOG_VERSION}.tar.gz";
+ENV DOWNLOAD_URL="https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${SYSLOG_VERSION}/syslog-ng-${SYSLOG_VERSION}.tar.gz"
 
 RUN set -x;\
 # 更新
