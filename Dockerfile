@@ -13,7 +13,7 @@ apk add curl alpine-sdk glib-dev pcre-dev eventlog-dev
 
 WORKDIR /tmp
 RUN set -x;\
-curl -L "${DOWNLOAD_URL}" > "syslog-ng-${SYSLOG_VERSION}.tar.gz";\
+curl -L "${DOWNLOAD_URL}" -o "syslog-ng-${SYSLOG_VERSION}.tar.gz";\
 tar zxf "syslog-ng-${SYSLOG_VERSION}.tar.gz";\
 cd "syslog-ng-${SYSLOG_VERSION}";\
 # 编译安装
@@ -27,6 +27,7 @@ apk del curl alpine-sdk glib-dev pcre-dev eventlog-dev
 
 
 #ADD ./syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
+WORKDIR /var/log/syslog-ng
 
 VOLUME ["/var/log/syslog-ng", "/var/run/syslog-ng"]
 
